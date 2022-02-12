@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/instance_manager.dart';
+//import 'package:get/instance_manager.dart';
 import 'package:getx_ecommerce/controller/product_controller.dart';
+import 'package:getx_ecommerce/view/total_amount.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 
@@ -53,7 +54,106 @@ class Homepage extends StatelessWidget {
         ],
       ),
       // Drawer design
-      drawer: Drawer(),
+      drawer: Drawer(
+        backgroundColor: Colors.redAccent,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(30, 60, 0, 0),
+          child: Container(
+            child: Padding(
+              padding: const EdgeInsets.only(right: 128.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        "https://mir-s3-cdn-cf.behance.net/user/276/d33182930303257.608e93bbc497d.jpg"),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "Rehan Hamayun",
+                    style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        CupertinoIcons.home,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        "Home",
+                        style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Get.to(() => TotalAmount());
+                    },
+                    child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Icon(
+                            CupertinoIcons.cart,
+                            color: Colors.white,
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            "Checkout ",
+                            style: GoogleFonts.poppins(
+                              color: Colors.white,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 100,
+                  ),
+                  Text(
+                    "Your Total:",
+                    style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  GetX<ProductController>(builder: ((controller) {
+                    return Text(
+                      productController.totalPrice.toString(),
+                      style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w600),
+                    );
+                  }))
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
       // Screen Designing
 
       body: Container(
