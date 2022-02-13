@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //import 'package:get/instance_manager.dart';
 import 'package:getx_ecommerce/controller/product_controller.dart';
+import 'package:getx_ecommerce/view/selected_products.dart';
 import 'package:getx_ecommerce/view/total_amount.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
@@ -34,7 +35,9 @@ class Homepage extends StatelessWidget {
               primary: Colors.redAccent,
               elevation: 0.0,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Get.to(() => SelectedProducts());
+            },
             icon: Icon(CupertinoIcons.cart),
             label: GetX<ProductController>(
               builder: (controller) {

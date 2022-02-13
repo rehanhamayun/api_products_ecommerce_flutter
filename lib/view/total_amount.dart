@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/instance_manager.dart';
+//import 'package:get/instance_manager.dart';
 import 'package:getx_ecommerce/controller/product_controller.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
@@ -37,7 +37,10 @@ class TotalAmount extends StatelessWidget {
                 },
                 icon: Icon(Icons.arrow_back_ios_new_sharp),
                 label: Text(""),
-              )
+              ),
+              SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ),

@@ -11,6 +11,7 @@ class ProductController extends GetxController {
   ProductController() {
     loadProductsfromRepo();
   }
+  //
 
 // Product store
   List cartItem = List.empty().obs;
