@@ -119,7 +119,7 @@ class Homepage extends StatelessWidget {
                             color: Colors.white,
                           ),
                           SizedBox(
-                            width: 20,
+                            width: 19,
                           ),
                           Text(
                             "Checkout ",
